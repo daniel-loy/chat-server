@@ -3,7 +3,7 @@ const server = http.createServer();
 
 const io = require('socket.io')(server, {
     cors: {
-        origin: "http://127.0.0.1:5501",
+        origin: "https://chat-app-dc5e6.web.app",
         methods: ["GET", "POST"]
     }
 });
@@ -12,6 +12,7 @@ const users = {};
 
 io.on('connection', (socket) => {
     socket.on('user-joined', (name) => {
+        console.log("the user joined",name);
         users[socket.id] = name;
         socket.broadcast.emit('user-joined', name);
     });
