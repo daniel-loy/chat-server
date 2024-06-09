@@ -3,7 +3,7 @@ const server = http.createServer();
 
 const io = require('socket.io')(server, {
     cors: {
-        origin: "https://chat-app-dc5e6.web.app",
+        origin: "https://chat-app-5c3e8.web.app",
         methods: ["GET", "POST"]
     }
 });
